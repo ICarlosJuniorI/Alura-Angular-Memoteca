@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
@@ -9,9 +10,9 @@ import { CriarPensamentoComponent } from './components/pensamentos/criar-pensame
 import { ListarPensamentoComponent } from './components/pensamentos/listar-pensamento/listar-pensamento.component';
 import { AppRoutingModule } from 'src/app-routing-module';
 import { PensamentoComponent } from './components/pensamentos/pensamento/pensamento.component';
-import { HttpClientModule } from '@angular/common/http';
 import { ExcluirPensamentoComponent } from './components/pensamentos/excluir-pensamento/excluir-pensamento.component';
 import { EditarPensamentoComponent } from './components/pensamentos/editar-pensamento/editar-pensamento.component';
+import { BotaoCarregarMaisComponent } from './components/pensamentos/listar-pensamento/botao-carregar-mais/botao-carregar-mais.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,15 @@ import { EditarPensamentoComponent } from './components/pensamentos/editar-pensa
     PensamentoComponent,
     ExcluirPensamentoComponent,
     EditarPensamentoComponent,
+    BotaoCarregarMaisComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
